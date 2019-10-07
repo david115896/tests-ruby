@@ -26,5 +26,5 @@ def first_word(sentence)
 end
 
 def titleize(word)
-	return word.split.map(&:capitalize).join(' ')
+	return word.split.map.with_index{|x,i| if x=="and"||x=="the"&& i>0  then  x.downcase else x.capitalize end}.join(' ')
 end
